@@ -22,6 +22,7 @@ body {
     #bf2e34 100%);
   color: #333;
   display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   font-family: 'Nunito', sans-serif;
@@ -44,12 +45,32 @@ main {
   width: 100rem;
 }
 
+.header {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
 /* END: Layout */
 
 /* START: Reusable */
 
+.hidden,
+.show {
+  transition: all 0.35s ease-in-out;
+}
+
 .hidden {
-  display: none;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.disabled {
+  cursor: not-allowed !important;
 }
 
 /* END: Reusable */
@@ -73,9 +94,16 @@ main {
   font-weight: 400;
   padding: 0.7rem 2.5rem;
   text-transform: uppercase;
-  transition: all 0.2s;
+  transition: all 0.35s ease-in-out;
 }
 
+.btn:hover,
+.btn:focus {
+  outline: none;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.25);
+}
+
+/* Selecting the emoji */
 .btn::first-letter {
   display: inline-block;
   font-size: 2.4rem;
@@ -116,7 +144,7 @@ main {
   padding: 2rem;
   text-align: center;
   width: 65%;
-  transition: all 0.75s;
+  transition: all 0.35s ease-in-out;
 }
 
 .current-label {
@@ -136,7 +164,7 @@ main {
     align-items: center;
   flex: 50%;
   padding: 9rem;
-  transition: all 0.75s;
+  transition: all 0.35s ease-in-out;
 }
 
 .player--active {
